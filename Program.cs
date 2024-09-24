@@ -8,18 +8,18 @@ namespace NewC_1._6
         {
             int numberGrandmothers;
             int minutesForOneGrandmother = 10;
-            int numberGrandmothersPerHour = 6;
-            int numberHours;
-            int numberMinutes;
+            int minutesPerHour = 60;
+            int waitingHours;
+            int waitingMinutes;
             int timeWhenThereNoQueue = 7;
 
             Console.Write($"Вам не пвезло и вы заболели и решили ранним утром придти в поликлинику что бы попасть без очереди, но встали слишком поздно и в {timeWhenThereNoQueue} утра уже образовалась очередь. Сколько бабушек вы видите перед собой: ");
             numberGrandmothers = Convert.ToInt32( Console.ReadLine() );
 
-            numberHours = numberGrandmothers / numberGrandmothersPerHour;
-            numberMinutes = numberGrandmothers * minutesForOneGrandmother - (numberHours * minutesForOneGrandmother);
+            waitingHours = numberGrandmothers * minutesForOneGrandmother / minutesPerHour;
+            waitingMinutes = numberGrandmothers * minutesForOneGrandmother - (waitingHours * minutesForOneGrandmother);
 
-            Console.WriteLine($"Придя рано утром в полеклинику Вы должны отстоять {numberHours} часов и {numberMinutes} минут. Удачи.");
+            Console.WriteLine($"Придя рано утром в полеклинику Вы должны отстоять {waitingHours} часов и {waitingMinutes} минут. Удачи.");
         }
     }
 }
