@@ -12,12 +12,14 @@ namespace NewC_1._6
             int waitingHours;
             int waitingMinutes;
             int timeWhenThereNoQueue = 7;
+            int allTimeInQueue;
 
             Console.Write($"Вам не пвезло и вы заболели и решили ранним утром придти в поликлинику что бы попасть без очереди, но встали слишком поздно и в {timeWhenThereNoQueue} утра уже образовалась очередь. Сколько бабушек вы видите перед собой: ");
             numberGrandmothers = Convert.ToInt32( Console.ReadLine() );
 
-            waitingHours = numberGrandmothers * minutesForOneGrandmother / minutesPerHour;
-            waitingMinutes = numberGrandmothers * minutesForOneGrandmother - (waitingHours * minutesForOneGrandmother);
+            allTimeInQueue = numberGrandmothers * minutesForOneGrandmother;
+            waitingHours = allTimeInQueue / minutesPerHour;
+            waitingMinutes = allTimeInQueue % minutesPerHour;
 
             Console.WriteLine($"Придя рано утром в полеклинику Вы должны отстоять {waitingHours} часов и {waitingMinutes} минут. Удачи.");
         }
